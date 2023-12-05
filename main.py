@@ -5,7 +5,7 @@ with open("books/frankenstein.txt") as f:
     
     # Calculate word count
     words = file_contents.split()
-    print(f"\nThere are {len(words)} words in this book.")
+    print(f"\nThere are {len(words)} words in this book.\n")
 
     # Calculate letter count
     letter_count = {}
@@ -16,5 +16,9 @@ with open("books/frankenstein.txt") as f:
         else:
             letter_count[letter] = 1
 
-    print()
-    print(letter_count)
+    letter_list = list(letter_count)
+    letter_list.sort()
+
+    for char in letter_list:
+        if (char.isalpha()):
+            print(f"The letter {char} appears {letter_count[char]} times.")
